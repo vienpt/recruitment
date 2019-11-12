@@ -1,9 +1,9 @@
 <template>
   <b-jumbotron
     class="flex-column text-center justify-content-center"
-    :header="header"
     :style="{ backgroundImage: `url(${image})` }"
   >
+    <h1 class="display-4">{{ header }}</h1>
   </b-jumbotron>
 </template>
 
@@ -36,6 +36,6 @@ export default {
 }
 
 h1 {
-  padding-top: 55px;
+  padding-top: 150px;
 }
 </style>
