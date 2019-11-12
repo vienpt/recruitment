@@ -102,6 +102,10 @@ export default {
 .banner .navbar {
   padding-top: 0.15rem;
   padding-bottom: 0.15rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.banner:not(.scrolled) .navbar {
+  box-shadow: none;
 }
 /* .banner:not(.scrolled) .navbar-brand {
   color: white;
