@@ -1,7 +1,10 @@
 <template>
   <div>
     <!-- herosearch -->
-    <HeroSearch class="pd-auto" />
+    <HeroPage
+      :header="heroInfo.title"
+      :image="require('assets/imgs/herosearch.png')"
+    />
     <b-container fluid>
       <!-- panel search job -->
       <div class="panel-searchjob mt-5">
@@ -36,8 +39,8 @@
                   <b-card-body>
                     <b-form-group>
                       <b-form-checkbox-group
-                        v-model="selected"
-                        :options="condition"
+                        v-model="filter.selected"
+                        :options="filter.options"
                         name="flavour-2a"
                         stacked
                       ></b-form-checkbox-group>
@@ -60,8 +63,8 @@
                   <b-card-body>
                     <b-form-group>
                       <b-form-checkbox-group
-                        v-model="selected"
-                        :options="condition"
+                        v-model="filter.selected"
+                        :options="filter.options"
                         name="flavour-2a"
                         stacked
                       ></b-form-checkbox-group>
@@ -84,8 +87,8 @@
                   <b-card-body>
                     <b-form-group>
                       <b-form-checkbox-group
-                        v-model="selected"
-                        :options="condition"
+                        v-model="filter.selected"
+                        :options="filter.options"
                         name="flavour-2a"
                         stacked
                       ></b-form-checkbox-group>
@@ -105,8 +108,8 @@
               </b-col>
               <b-col xl="3" lg="4" md="4" sm="12">
                 <b-form-select
-                  v-model="selected"
-                  :options="sortby"
+                  v-model="sortby.selected"
+                  :options="sortby.options"
                   value-field="value"
                   text-field="text"
                 ></b-form-select>
@@ -126,7 +129,7 @@
             <b-card-body>
               <!-- name job -->
               <b-card-title>
-                <b-link to="#">{{ job.name }}</b-link>
+                <b-link to="/search/job">{{ job.name }}</b-link>
               </b-card-title>
               <!-- info job | tab job | date job -->
               <b-card-sub-title class="mb-2"
@@ -154,30 +157,38 @@
 </template>
 
 <script>
-import HeroSearch from './HeroSearch'
+import HeroPage from '@/components/HeroPage'
 import SearchJob from '@/components/SearchJob'
 
 export default {
   components: {
-    HeroSearch,
+    HeroPage,
     SearchJob
   },
   data() {
     return {
+      heroInfo: {
+        title: 'Your Search'
+      },
       lg: 12,
-      selected: 'c',
       perPage: 3,
       currentPage: 1,
-      condition: [
-        { value: 'c', text: 'Most relevant' },
-        { value: 'a', text: 'Most recent' },
-        { value: 'b', text: 'Most popular' }
-      ],
-      sortby: [
-        { value: 'c', text: 'Most relevant' },
-        { value: 'a', text: 'Most recent' },
-        { value: 'b', text: 'Most popular' }
-      ],
+      filter: {
+        selected: [],
+        options: [
+          { value: 'c', text: 'Most relevant' },
+          { value: 'a', text: 'Most recent' },
+          { value: 'b', text: 'Most popular' }
+        ]
+      },
+      sortby: {
+        selected: 'c',
+        options: [
+          { value: 'c', text: 'Most relevant' },
+          { value: 'a', text: 'Most recent' },
+          { value: 'b', text: 'Most popular' }
+        ]
+      },
       jobs: [
         {
           id: 1,
@@ -274,8 +285,8 @@ export default {
 <style scoped>
 @media (max-width: 992px) {
   .container-fluid {
-    padding-right: 20px !important;
-    padding-left: 20px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
   }
 }
 
