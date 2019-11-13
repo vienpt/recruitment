@@ -35,8 +35,8 @@
         <hr />
         <b-row class="py-3 row-job-info">
           <b-col
-            v-for="job in jobs.data"
-            :key="job"
+            v-for="(job, idx) in jobs.data"
+            :key="idx"
             lg="6"
             sm="12"
             class="py-3"
@@ -88,8 +88,8 @@
           <b-col cols="12">
             <h3 class="pb-3">Responsibilities</h3>
             <ul
-              v-for="responsibility in jobs.responsibilities"
-              :key="responsibility"
+              v-for="(responsibility, idx) in jobs.responsibilities"
+              :key="idx"
               class="pt-1"
             >
               <li>{{ responsibility.item }}</li>
@@ -99,8 +99,8 @@
           <b-col cols="12" class="pt-3">
             <h3 class="pb-3">Qualifications</h3>
             <ul
-              v-for="qualification in jobs.qualifications"
-              :key="qualification"
+              v-for="(qualification, idx) in jobs.qualifications"
+              :key="idx"
               class="pt-1"
             >
               <li>{{ qualification.item }}</li>
@@ -110,7 +110,7 @@
           <b-col cols="12" class="pt-3">
             <h3 class="pb-3">Your Skills and Experience</h3>
             <p class="p-text pt-1">{{ jobs.skills.des }}</p>
-            <ul v-for="skill in jobs.skills.items" :key="skill" class="pt-1">
+            <ul v-for="(skill, idx) in jobs.skills.items" :key="idx" class="pt-1">
               <li>{{ skill.text }}</li>
             </ul>
           </b-col>
@@ -207,7 +207,9 @@ export default {
         }
       }
     };
-  }
+  },
+  mounted () {},
+  methods: {}
 };
 </script>
 
