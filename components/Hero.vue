@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import SearchJob from '@/components/SearchJob'
-import Suggested from '@/components/Suggested'
+import SearchJob from '@/components/SearchJob';
+import Suggested from '@/components/Suggested';
 // import Autocomplete from '~/components/Autocomplete'
 
 export default {
@@ -29,7 +29,7 @@ export default {
     SearchJob,
     Suggested
   }
-}
+};
 </script>
 
 <style scoped>

@@ -15,17 +15,17 @@
 </template>
 
 <script>
-import Hero from '@/components/Hero'
+import Hero from '@/components/Hero';
 
 export default {
   components: {
     Hero
   },
-  data() {
-    return {}
+  data () {
+    return {};
   },
   computed: {}
-}
+};
 </script>
 
 <style></style>

@@ -129,7 +129,7 @@
             <b-card-body>
               <!-- name job -->
               <b-card-title>
-                <b-link to="/search/job">{{ job.name }}</b-link>
+                <b-link to="/search/job"> {{ job.name }}</b-link>
               </b-card-title>
               <!-- info job | tab job | date job -->
               <b-card-sub-title class="mb-2"
@@ -157,15 +157,15 @@
 </template>
 
 <script>
-import HeroPage from '@/components/HeroPage'
-import SearchJob from '@/components/SearchJob'
+import HeroPage from '@/components/HeroPage';
+import SearchJob from '@/components/SearchJob';
 
 export default {
   components: {
     HeroPage,
     SearchJob
   },
-  data() {
+  data () {
     return {
       heroInfo: {
         title: 'Your Search'
@@ -272,14 +272,14 @@ export default {
             'Some quick example text to build on the card title and make up the bulk of the cards content.'
         }
       ]
-    }
+    };
   },
   computed: {
-    rows() {
-      return this.jobs.length
+    rows () {
+      return this.jobs.length;
     }
   }
-}
+};
 </script>
 
 <style scoped>

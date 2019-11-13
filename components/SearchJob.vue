@@ -1,6 +1,13 @@
 <template>
-  <b-row class="search-job-form" align-h="start">
-    <b-col cols="12" :lg="lg" class="md-auto">
+  <b-row
+    class="search-job-form"
+    align-h="start"
+  >
+    <b-col
+      cols="12"
+      :lg="lg"
+      class="md-auto"
+    >
       <b-input-group class="mt-3">
         <template v-slot:append>
           <b-button-group>
@@ -68,17 +75,12 @@ export default {
       default: 7
     }
   },
-  data() {
+  data () {
     return {
       profession_flag: false,
       searchQuery: '',
       resources: [
-        {
-          title: 'Hardware',
-          uri: '#',
-          category: 'a',
-          icon: 'chalkboard'
-        },
+        { title: 'Hardware', uri: '#', category: 'a', icon: 'chalkboard' },
         { title: 'Software', uri: '#', icon: 'warehouse' },
         { title: 'Web', uri: '#', icon: 'code' },
         { title: 'Mobile', uri: '#', icon: 'code' },
@@ -92,25 +94,25 @@ export default {
         },
         { title: 'DevOps', uri: '#', category: 'd', icon: 'code' }
       ]
-    }
+    };
   },
   computed: {
-    filteredResources() {
+    filteredResources () {
       if (this.searchQuery) {
         return this.resources.filter((item) => {
-          return item.title.startsWith(this.searchQuery)
-        })
+          return item.title.startsWith(this.searchQuery);
+        });
       } else {
-        return this.resources
+        return this.resources;
       }
     }
   },
   methods: {
-    searchJob() {
-      this.$router.push({ path: '/search' })
+    searchJob () {
+      this.$router.push({ path: '/search' });
     }
   }
-}
+};
 </script>
 
 <style scoped>

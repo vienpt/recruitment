@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import Banner from '@/components/Banner'
+import Banner from '@/components/Banner';
 
 export default {
   components: {
     Banner
   }
-}
+};
 </script>
 
 <style>

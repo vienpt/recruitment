@@ -44,33 +44,33 @@
 
 <script>
 export default {
-  data() {
-    return {}
+  data () {
+    return {};
   },
-  beforeMount() {
+  beforeMount () {
     if (process.browser) {
-      window.addEventListener('scroll', this.handleScroll)
+      window.addEventListener('scroll', this.handleScroll);
     }
   },
-  beforeDestroy() {
+  beforeDestroy () {
     if (process.browser) {
-      window.removeEventListener('scroll', this.handleScroll)
+      window.removeEventListener('scroll', this.handleScroll);
     }
   },
   methods: {
-    handleScroll() {
-      const divBanner = document.querySelector('.banner')
+    handleScroll () {
+      const divBanner = document.querySelector('.banner');
       if (
         document.body.scrollTop > 50 ||
         document.documentElement.scrollTop > 50
       ) {
-        divBanner.classList.add('scrolled')
+        divBanner.classList.add('scrolled');
       } else {
-        divBanner.classList.remove('scrolled')
+        divBanner.classList.remove('scrolled');
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>
