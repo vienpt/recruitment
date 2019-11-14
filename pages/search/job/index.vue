@@ -1,6 +1,9 @@
 <template>
   <div>
-    <HeroPage :header="title" :image="require('assets/imgs/herojob.png')" />
+    <HeroPage
+      :header="title"
+      :image="require('assets/imgs/herojob.png')"
+    />
     <b-container>
       <b-card class="px-4 py-4">
         <!-- show info job -->
@@ -11,22 +14,48 @@
             <p class="text-muted">Ho Chi Minh</p>
           </b-col>
           <!-- button apply job and mark save  -->
-          <b-col cols="12" lg="9" md="12" class="float-left py-2">
-            <b-button variant="primary" size="lg">Apply now</b-button>
-            <b-button variant="light" size="lg" class="btn-mark-save ml-4">
+          <b-col
+            cols="12"
+            lg="9"
+            md="12"
+            class="float-left py-2"
+          >
+            <b-button
+              variant="primary"
+              size="lg"
+            >Apply now</b-button>
+            <b-button
+              variant="light"
+              size="lg"
+              class="btn-mark-save ml-4"
+            >
               <font-awesome-icon :icon="['far', 'star']" />
               Save
             </b-button>
           </b-col>
           <!-- icon share job -->
-          <b-col cols="12" lg="3" md="12" class="float-right py-2">
-            <b-button variant="light" class="btn-share-job">
+          <b-col
+            cols="12"
+            lg="3"
+            md="12"
+            class="float-right py-2"
+          >
+            <b-button
+              variant="light"
+              class="btn-share-job"
+            >
               <font-awesome-icon :icon="['fab', 'facebook-f']" />
             </b-button>
-            <b-button variant="light" class="btn-share-job ml-1">
+            <b-button
+              variant="light"
+              class="btn-share-job ml-1"
+            >
               <font-awesome-icon :icon="['far', 'envelope']" />
             </b-button>
-            <b-button variant="light" class="btn-share-job ml-1">
+            <b-button
+              variant="light"
+              class="btn-share-job ml-1"
+            >
               <font-awesome-icon icon="link" />
             </b-button>
           </b-col>
@@ -64,7 +93,10 @@
               team, and love learning, we should talk!
             </p>
           </b-col>
-          <b-col cols="12" class="py-3">
+          <b-col
+            cols="12"
+            class="py-3"
+          >
             <h5>About company</h5>
             <p class="pt-1 p-text">
               Founded in 2018, Otrafy is part of a new generation of startups,
@@ -96,7 +128,10 @@
             </ul>
           </b-col>
           <!-- qualifications -->
-          <b-col cols="12" class="pt-3">
+          <b-col
+            cols="12"
+            class="pt-3"
+          >
             <h3 class="pb-3">Qualifications</h3>
             <ul
               v-for="(qualification, idx) in jobs.qualifications"
@@ -107,10 +142,17 @@
             </ul>
           </b-col>
           <!-- Your Skills and Experience -->
-          <b-col cols="12" class="pt-3">
+          <b-col
+            cols="12"
+            class="pt-3"
+          >
             <h3 class="pb-3">Your Skills and Experience</h3>
             <p class="p-text pt-1">{{ jobs.skills.des }}</p>
-            <ul v-for="(skill, idx) in jobs.skills.items" :key="idx" class="pt-1">
+            <ul
+              v-for="(skill, idx) in jobs.skills.items"
+              :key="idx"
+              class="pt-1"
+            >
               <li>{{ skill.text }}</li>
             </ul>
           </b-col>
@@ -119,27 +161,74 @@
         <hr />
         <b-row class="mt-5">
           <!-- button apply job and mark save  -->
-          <b-col cols="12" lg="9" md="12" class="float-left py-2">
-            <b-button variant="primary" size="lg">Apply now</b-button>
-            <b-button variant="light" size="lg" class="btn-mark-save ml-4">
+          <b-col
+            cols="12"
+            lg="9"
+            md="12"
+            class="float-left py-2"
+          >
+            <b-button
+              variant="primary"
+              size="lg"
+            >Apply now</b-button>
+            <b-button
+              variant="light"
+              size="lg"
+              class="btn-mark-save ml-4"
+            >
               <font-awesome-icon :icon="['far', 'star']" />
               Save
             </b-button>
           </b-col>
           <!-- icon share job -->
-          <b-col cols="12" lg="3" md="12" class="float-right py-2">
-            <b-button variant="light" class="btn-share-job">
+          <b-col
+            cols="12"
+            lg="3"
+            md="12"
+            class="float-right py-2"
+          >
+            <b-button
+              variant="light"
+              class="btn-share-job"
+            >
               <font-awesome-icon :icon="['fab', 'facebook-f']" />
             </b-button>
-            <b-button variant="light" class="btn-share-job ml-1">
+            <b-button
+              variant="light"
+              class="btn-share-job ml-1"
+            >
               <font-awesome-icon :icon="['far', 'envelope']" />
             </b-button>
-            <b-button variant="light" class="btn-share-job ml-1">
+            <b-button
+              variant="light"
+              class="btn-share-job ml-1"
+            >
               <font-awesome-icon icon="link" />
             </b-button>
           </b-col>
         </b-row>
       </b-card>
+      <!-- similar job -->
+      <div class="similar-job my-5">
+        <h5 class="text-muted text-center pb-3">Similar jobs</h5>
+        <ul class="similar-job-items">
+          <li
+            class="py-4 px-4"
+            border-black
+          >
+            <b-link>
+              <h5 class="text-muted">Web Cloud</h5>
+              <div>
+                <span class="text-muted">Ho Chi Minh | Cloud</span>
+              </div>
+            </b-link>
+          </li>
+        </ul>
+      </div>
+      <!-- back to job search -->
+      <div class="my-5">
+        <b-link class="btn-view-all-job text-muted" to="/search">View all jobs</b-link>
+      </div>
     </b-container>
   </div>
 </template>
@@ -208,7 +297,7 @@ export default {
       }
     };
   },
-  mounted () {},
+  mounted () { },
   methods: {}
 };
 </script>
@@ -242,5 +331,24 @@ export default {
 
 .p-text {
   line-height: 1.8rem;
+}
+
+.similar-job-items {
+  list-style: none;
+  padding-left: 0px !important;
+
+  li {
+    background-color: whitesmoke;
+  }
+  li:hover {
+    background-color: rgb(207, 207, 207);
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.btn-view-all-job {
+  text-decoration: underline;
 }
 </style>
