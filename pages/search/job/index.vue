@@ -237,6 +237,7 @@
 import HeroPage from '@/components/HeroPage';
 
 export default {
+  middleware: 'authenticated',
   components: {
     HeroPage
   },

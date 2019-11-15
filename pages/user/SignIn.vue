@@ -12,68 +12,72 @@
         <b-card class="mt-3">
           <b-form-group>
             <!-- login by another social -->
-            <div class="my-3 text-center">
+            <b-row class="text-center">
+              <b-col>
               <b-btn
                 to="#"
                 size="lg"
                 variant="light"
                 block
               >Log in with other Social</b-btn>
-            </div>
+              </b-col>
+            </b-row>
             <div class="link-seperator d-flex justify-content-center my-3">
               <span>or</span>
             </div>
-            <!-- email group -->
-            <div role="group">
-              <b-form-input
-                id="input-email"
-                v-model="email"
-                required
-                :state="null"
-                aria-describedby="input-live-help input-live-feedback"
-                size="lg"
-                type="email"
-                placeholder="Enter your email"
-                trim
-              ></b-form-input>
-              <!-- This will only be shown if the preceding input has an invalid state -->
-              <b-form-invalid-feedback id="input-live-feedback">
-                Enter at least 3 letters
-              </b-form-invalid-feedback>
-            </div>
-            <!-- password group -->
-            <div role="group" class="mt-3">
-              <b-form-input
-                size="lg"
-                type="password"
-                placeholder="Enter your password"
-              ></b-form-input>
-            </div>
-            <!-- forgot and remember group -->
-            <div role="group" class="mt-3">
-              <b-form-checkbox
-                id="checkbox-rememberme"
-                v-model="rememberme"
-                name="checkbox-rememberme"
-                value="accepted"
-                unchecked-value="not_accepted"
-                size="lg"
-                class="float-left"
-              >
-                Remember me
-              </b-form-checkbox>
-              <b-link
-                to="/user/forgotpass"
-                class="float-right"
-              >Forgot password?</b-link>
-            </div>
-            <!-- button login group -->
+            <!-- input group -->
             <b-row role="group">
-              <b-col class="mt-3">
+              <!-- column email -->
+              <b-col cols="12">
+                <b-form-input
+                  id="input-email"
+                  v-model="email"
+                  required
+                  :state="null"
+                  aria-describedby="input-live-help input-live-feedback"
+                  size="lg"
+                  type="email"
+                  placeholder="Enter your email"
+                  trim
+                ></b-form-input>
+                <!-- This will only be shown if the preceding input has an invalid state -->
+                <b-form-invalid-feedback id="input-live-feedback">
+                  Enter at least 3 letters
+                </b-form-invalid-feedback>
+              </b-col>
+              <!-- column password  -->
+              <b-col cols="12" class="mt-3">
+                <b-form-input
+                  v-model="password"
+                  size="lg"
+                  type="password"
+                  placeholder="Enter your password"
+                ></b-form-input>
+              </b-col>
+              <!-- forgot and remember group -->
+              <b-col cols="12" class="mt-3">
+                <b-form-checkbox
+                  id="checkbox-rememberme"
+                  v-model="rememberme"
+                  name="checkbox-rememberme"
+                  value="accepted"
+                  unchecked-value="not_accepted"
+                  size="lg"
+                  class="float-left"
+                >
+                  Remember me
+                </b-form-checkbox>
+                <b-link
+                  to="/user/forgotpass"
+                  class="float-right"
+                >Forgot password?</b-link>
+              </b-col>
+              <b-col cols="12" class="mt-3">
                 <b-btn
                   size="lg"
                   variant="primary"
                   block
+                  @click="postLogin"
                 >
                   Login
                 </b-btn>
@@ -82,7 +86,7 @@
           </b-form-group>
         </b-card>
         <!-- dont have account  -->
-        <div class="mt-3 text-center">
+        <div class="my-3 text-center">
           <span>Dont have an account?</span>
           <b-link to="/user/signup">Join now</b-link>
         </div>
@@ -92,17 +96,30 @@
 </template>
 
 <script>
+// const Cookie = process.client ? require('js-cookie') : undefined;
+
 export default {
+  middleware: 'notAuthenticated',
   layout: 'signin',
   data () {
     return {
-      email: '',
+      email: 'test@abc.com',
+      password: 'password',
       rememberme: 'not_accepted'
     };
   },
   computed: {
     emailState () {
       return this.email.length > 2;
+    }
+  },
+  methods: {
+    postLogin () {
+      setTimeout(() => {
+        const auth = 'someStringGotFromApiServiceWithAxios';
+        this.$store.commit('auths/setAuth', auth);
+        this.$router.push({ path: '/' });
+      }, 1000);
     }
   }
 };

@@ -30,7 +30,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/font-awesome' }],
+  plugins: [
+    { src: '~/plugins/font-awesome' },
+    { src: '~/plugins/localStorage.js', ssr: false },
+    { src: '~/plugins/cookie-storage.js' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -65,7 +69,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend (config, ctx) {}
   },
   /*
    ** Setting Server runtime
@@ -73,4 +77,4 @@ export default {
   server: {
     port: 7002
   }
-}
+};

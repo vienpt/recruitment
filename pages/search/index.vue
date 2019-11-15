@@ -161,6 +161,7 @@ import HeroPage from '@/components/HeroPage';
 import SearchJob from '@/components/SearchJob';
 
 export default {
+  middleware: 'authenticated',
   components: {
     HeroPage,
     SearchJob

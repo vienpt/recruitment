@@ -11,27 +11,28 @@
 
         <b-card class="mt-3">
           <b-form-group>
-            <!-- email group -->
-            <div role="group" class="mt-3">
-              <b-form-input
-                id="input-email"
-                v-model="email"
-                required
-                :state="null"
-                aria-describedby="input-live-help input-live-feedback"
-                size="lg"
-                type="email"
-                placeholder="Enter your email"
-                trim
-              ></b-form-input>
-              <!-- This will only be shown if the preceding input has an invalid state -->
-              <b-form-invalid-feedback id="input-live-feedback">
-                Enter at least 3 letters
-              </b-form-invalid-feedback>
-            </div>
-            <!-- button reset password -->
             <b-row role="group">
-              <b-col class="mt-3">
+              <b-col cols="12">
+                <b-form-input
+                  id="input-email"
+                  v-model="email"
+                  required
+                  :state="null"
+                  aria-describedby="input-live-help input-live-feedback"
+                  size="lg"
+                  type="email"
+                  placeholder="Enter your email"
+                  trim
+                ></b-form-input>
+                <!-- This will only be shown if the preceding input has an invalid state -->
+                <b-form-invalid-feedback id="input-live-feedback">
+                  Enter at least 3 letters
+                </b-form-invalid-feedback>
+              </b-col>
+              <b-col
+                cols="12"
+                class="mt-3"
+              >
                 <b-btn
                   size="lg"
                   variant="primary"
@@ -54,6 +55,7 @@
 
 <script>
 export default {
+  middleware: 'authenticated',
   layout: 'signin',
   data () {
     return {

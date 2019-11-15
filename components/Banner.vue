@@ -36,6 +36,14 @@
             aria-pressed="true"
             >Click4</a
           >
+          <a v-if="$store.state.auths.auth"
+            href="#"
+            class="btn btn-md active btn-click4 btn-banner"
+            role="button"
+            aria-pressed="true"
+            @click="logout"
+            >Logout</a
+          >
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -68,6 +76,10 @@ export default {
       } else {
         divBanner.classList.remove('scrolled');
       }
+    },
+    logout () {
+      this.$store.commit('auths/setAuth', null);
+      this.$router.push({ path: '/' });
     }
   }
 };
