@@ -1,49 +1,82 @@
 <template>
   <div class="banner">
-    <b-navbar toggleable="sm" variant="faded" type="light">
-      <b-navbar-brand to="/" tag="h1" class="mb-0">Recruiment</b-navbar-brand>
+    <b-navbar
+      toggleable="sm"
+      variant="faded"
+      type="light"
+    >
+      <b-navbar-brand
+        to="/"
+        tag="h1"
+        class="mb-0"
+      >Recruiment</b-navbar-brand>
       <div>
         <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
       </div>
 
-      <b-collapse id="nav-text-collapse" is-nav>
-        <b-navbar-nav>
+      <b-collapse
+        id="nav-text-collapse"
+        is-nav
+      >
+        <b-navbar-nav class="flex-start">
           <a
             href="#"
             class="btn btn-md active btn-click1 btn-banner"
             role="button"
             aria-pressed="true"
-            >Click1</a
-          >
+          >Click1</a>
           <a
             href="#"
             class="btn btn-md active btn-click2 btn-banner"
             role="button"
             aria-pressed="true"
-            >Click2</a
-          >
+          >Click2</a>
           <a
             href="#"
             class="btn btn-md active btn-click3 btn-banner"
             role="button"
             aria-pressed="true"
-            >Click3</a
-          >
+          >Click3</a>
           <a
             href="#"
             class="btn btn-md active btn-click4 btn-banner"
             role="button"
             aria-pressed="true"
-            >Click4</a
-          >
-          <a v-if="$store.state.auths.auth"
-            href="#"
-            class="btn btn-md active btn-click4 btn-banner"
+          >Click4</a>
+        </b-navbar-nav>
+        <!-- user profile has authenticated -->
+        <b-navbar-nav class="ml-auto">
+          <b-link
+            v-if="!$store.state.auths.auth"
+            to="/user/signin"
+            class="btn btn-md active btn-banner bg-light text-dark"
             role="button"
             aria-pressed="true"
-            @click="logout"
-            >Logout</a
           >
+            Sign in
+          </b-link>
+          <b-nav-item-dropdown
+            v-if="$store.state.auths.auth"
+            right
+          >
+            <template v-slot:button-content>
+              <b-img-lazy
+                src="https://picsum.photos/35/35/?image=58"
+                class="d-inline-block align-top"
+                rounded="circle"
+              ></b-img-lazy>
+            </template>
+            <b-dropdown-group header="Account">
+              <b-dropdown-item>Setting & Privacy</b-dropdown-item>
+              <b-dropdown-item>Languages</b-dropdown-item>
+            </b-dropdown-group>
+            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-group header="Manage">
+              <b-dropdown-item to="/user/profile">Profile</b-dropdown-item>
+            </b-dropdown-group>
+            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-item @click="logout">Sign out</b-dropdown-item>
+          </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -79,7 +112,7 @@ export default {
     },
     logout () {
       this.$store.commit('auths/setAuth', null);
-      this.$router.push({ path: '/' });
+      this.$router.push({ path: '/user/signin' });
     }
   }
 };

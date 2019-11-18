@@ -118,7 +118,7 @@ export default {
       setTimeout(() => {
         const auth = 'someStringGotFromApiServiceWithAxios';
         this.$store.commit('auths/setAuth', auth);
-        this.$router.push({ path: '/' });
+        this.$router.go(-1);
       }, 1000);
     }
   }

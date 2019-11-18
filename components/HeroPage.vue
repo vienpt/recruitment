@@ -2,6 +2,7 @@
   <b-jumbotron
     class="flex-column text-center justify-content-center"
     :style="{ backgroundImage: `url(${image})` }"
+    fluid
   >
     <h1 class="display-4">{{ header }}</h1>
   </b-jumbotron>
