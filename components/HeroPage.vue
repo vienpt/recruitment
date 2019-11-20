@@ -1,6 +1,6 @@
 <template>
   <b-jumbotron
-    class="flex-column text-center justify-content-center"
+    class="d-flex flex-column align-items-center text-center justify-content-center"
     :style="{ backgroundImage: `url(${image})` }"
     fluid
   >
@@ -34,9 +34,5 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
-
-h1 {
-  padding-top: 150px;
 }
 </style>

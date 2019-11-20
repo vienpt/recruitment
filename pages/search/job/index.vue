@@ -304,18 +304,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 992px) {
-  .container-fluid {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
-}
-
-.container-fluid {
-  padding-right: 100px;
-  padding-left: 100px;
-}
-
 .btn-mark-save {
   background-color: transparent;
   border: none;
