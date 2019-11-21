@@ -87,80 +87,82 @@
     <p class="display-4 text-center p-5">Plan details</p>
     <!-- plan details -->
     <b-container>
-      <table class="table border">
-        <thead>
-          <tr class="text-center">
-            <th scope="col">
-              <span class="sr-only">Features</span>
-            </th>
-            <th scope="col">
-              <b-badge variant="info text-capitalize">standard</b-badge>
-            </th>
-            <th scope="col">
-              <b-badge variant="primary text-capitalize">pro</b-badge>
-            </th>
-            <th scope="col">
-              <b-badge variant="business text-capitalize">business</b-badge>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="rowgroup" colspan="4">Feature 1</th>
-          </tr>
-          <tr class="text-center">
-            <th scope="row" class="text-left text-muted font-weight-normal">Feature 1.1</th>
-            <td>
-              <span>$15/user/month</span>
-            </td>
-            <td>
-              <span>$30/user/month</span>
-            </td>
-            <td>
-              <span>$45/user/month</span>
-            </td>
-          </tr>
-          <tr class="text-center">
-            <th scope="row" class="text-left text-muted font-weight-normal">Feature 1.2</th>
-            <td>
-              <span>$15/user/month</span>
-            </td>
-            <td>
-              <span>$30/user/month</span>
-            </td>
-            <td>
-              <span>$45/user/month</span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="rowgroup" colspan="4">Feature 2</th>
-          </tr>
-          <tr class="text-center">
-            <th scope="row" class="text-left text-muted font-weight-normal">Feature 2.1</th>
-            <td>
-              <span>$15/user/month</span>
-            </td>
-            <td>
-              <span>$30/user/month</span>
-            </td>
-            <td>
-              <span>$45/user/month</span>
-            </td>
-          </tr>
-          <tr class="text-center">
-            <th scope="row" class="text-left text-muted font-weight-normal">Feature 2.1</th>
-            <td>
-              <span>$15/user/month</span>
-            </td>
-            <td>
-              <span>$30/user/month</span>
-            </td>
-            <td>
-              <span>$45/user/month</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table border">
+          <thead>
+            <tr class="text-center">
+              <th scope="col">
+                <span class="sr-only">Features</span>
+              </th>
+              <th scope="col">
+                <b-badge variant="info text-capitalize">standard</b-badge>
+              </th>
+              <th scope="col">
+                <b-badge variant="primary text-capitalize">pro</b-badge>
+              </th>
+              <th scope="col">
+                <b-badge variant="business text-capitalize">business</b-badge>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="rowgroup" colspan="4">Feature 1</th>
+            </tr>
+            <tr class="text-center">
+              <th scope="row" class="text-left text-muted font-weight-normal">Feature 1.1</th>
+              <td>
+                <span>$15/user/month</span>
+              </td>
+              <td>
+                <span>$30/user/month</span>
+              </td>
+              <td>
+                <span>$45/user/month</span>
+              </td>
+            </tr>
+            <tr class="text-center">
+              <th scope="row" class="text-left text-muted font-weight-normal">Feature 1.2</th>
+              <td>
+                <span>$15/user/month</span>
+              </td>
+              <td>
+                <span>$30/user/month</span>
+              </td>
+              <td>
+                <span>$45/user/month</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="rowgroup" colspan="4">Feature 2</th>
+            </tr>
+            <tr class="text-center">
+              <th scope="row" class="text-left text-muted font-weight-normal">Feature 2.1</th>
+              <td>
+                <span>$15/user/month</span>
+              </td>
+              <td>
+                <span>$30/user/month</span>
+              </td>
+              <td>
+                <span>$45/user/month</span>
+              </td>
+            </tr>
+            <tr class="text-center">
+              <th scope="row" class="text-left text-muted font-weight-normal">Feature 2.1</th>
+              <td>
+                <span>$15/user/month</span>
+              </td>
+              <td>
+                <span>$30/user/month</span>
+              </td>
+              <td>
+                <span>$45/user/month</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </b-container>
   </div>
 </template>

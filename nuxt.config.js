@@ -18,13 +18,14 @@ export default {
       }
     ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/icon-tree.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap&subset=vietnamese' }
     ]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: '~/components/loading.vue', // { color: '#6610f2' },
   /*
    ** Global CSS
    */

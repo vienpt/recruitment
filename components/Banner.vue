@@ -19,30 +19,24 @@
         is-nav
       >
         <b-navbar-nav class="flex-start">
-          <a
-            href="#"
+          <NLink
+            to="/search"
             class="btn btn-md active btn-click1 btn-banner"
             role="button"
             aria-pressed="true"
-          >Click1</a>
-          <a
-            href="#"
-            class="btn btn-md active btn-click2 btn-banner"
+          >Search jobs</NLink>
+          <NLink
+            to="/pricing"
+            class="btn btn-md active btn-click1 btn-banner"
             role="button"
             aria-pressed="true"
-          >Click2</a>
-          <a
-            href="#"
-            class="btn btn-md active btn-click3 btn-banner"
+          >Pricing</NLink>
+          <NLink
+            to="/alert"
+            class="btn btn-md active btn-click1 btn-banner"
             role="button"
             aria-pressed="true"
-          >Click3</a>
-          <a
-            href="#"
-            class="btn btn-md active btn-click4 btn-banner"
-            role="button"
-            aria-pressed="true"
-          >Click4</a>
+          >Alert</NLink>
         </b-navbar-nav>
         <!-- user profile has authenticated -->
         <b-navbar-nav class="ml-auto">
