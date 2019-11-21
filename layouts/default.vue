@@ -37,7 +37,7 @@ html {
 .form-control:focus {
   box-shadow: 0 0 0 0rem rgba(0, 123, 255, 0.25);
 }
-.btn:focus {
+.btn:focus, button:focus {
   outline: transparent;
   box-shadow: none !important;
 }

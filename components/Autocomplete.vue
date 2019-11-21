@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       searchQuery: '',
       resources: [
@@ -49,20 +49,20 @@ export default {
         { title: 'Infrastructure', uri: 'cccc.com', category: 'c', icon: null },
         { title: 'DevOps', uri: 'dddd.com', category: 'd', icon: null }
       ]
-    }
+    };
   },
   computed: {
-    filteredResources() {
+    filteredResources () {
       if (this.searchQuery) {
         return this.resources.filter((item) => {
-          return item.title.startsWith(this.searchQuery)
-        })
+          return item.title.startsWith(this.searchQuery);
+        });
       } else {
-        return this.resources
+        return this.resources;
       }
     }
   }
-}
+};
 </script>
 
 <style></style>
